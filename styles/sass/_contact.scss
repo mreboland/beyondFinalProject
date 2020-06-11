@@ -1,0 +1,70 @@
+.contact {
+    display: flex;
+
+    .wrapper-outer {
+        display: flex;
+    }
+
+    img {
+        max-width: 1075px;
+    }
+
+    .inner-contact {
+    margin-right: 5%;
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+
+    h3 {
+        text-align: left;
+        letter-spacing: 0;
+    }
+}
+
+.inner-contact {
+
+    h2:nth-child(2) {
+        margin-top: 0;
+        margin-bottom: 100px;
+    }
+
+    .country,
+    .city {
+        font-size: 2.5rem;
+    }
+
+    .city {
+        color: black;
+    }
+
+    .email {
+        color: black;
+        font-weight: 600;
+    }
+
+    div {
+        p {
+            margin-top: 50px;
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+    }
+
+    .phone-number {
+        font-size: 3rem;
+        margin-top: 0;
+    }
+
+
+
+}

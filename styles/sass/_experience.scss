@@ -1,0 +1,52 @@
+/*********************/
+/* Experience styles */
+/*********************/
+
+.amenities {
+    display: flex;
+    // margin-top: 100px;
+}
+
+.amenities h3 {
+    text-align: left;
+}
+
+.amenities li {
+    flex: 1 1 250px;
+
+}
+
+.experience {
+    display: flex;
+    align-items: center;
+}
+
+.experience ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 680px;
+    margin-left: 18%;
+}
+
+.experience li {
+    display: flex;
+
+    h3 {
+        color: black;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+
+    i {
+        font-size: 3rem;
+        margin-right: 20px;
+    }
+}
+
+.experience-image {
+    display: flex;
+
+    img {
+        width: auto;
+    }
+}
