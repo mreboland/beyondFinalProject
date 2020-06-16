@@ -5,12 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+    }
+</style>
 <body>
-    <canvas id="game-layer" width="200" height="200"></canvas>
-
-
-
-    <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
-    <script src="./js/scripts.js"></script>
+    <!-- The main starfield container, fills the entire screen. -->
+    <div id="container"></div>
+    <script src="./js/starfield.js"></script>
+    <script>
+        //  Get the container and turn it into a starfield.
+        var container = document.getElementById('container');
+        var starfield = new Starfield();
+        starfield.initialise(container);
+        starfield.start();
+    </script>
+    
 </body>
 </html>
