@@ -4,25 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <style>
-    #container {
-        width: 100%;
-        height: 100%;
+    #starfield {
+        width:100%;
+        height:100%;
+        z-index: -1;
         position: absolute;
         left: 0px;
         top: 0px;
-        z-index: -1;
+    } 
+
+    /* Styling needed for a fullscreen canvas and no scrollbars. */
+    body, html { 
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
     }
+    /* Here's where we'll put Space Invader styles... */
 </style>
 <body>
     <!-- The main starfield container, fills the entire screen. -->
-    <div id="container"></div>
+    <div id="starfield"></div>
+
+
+    
     <script src="./js/starfield.js"></script>
+    <script src="./js/spaceInvaders.js"></script>
     <script>
         //  Get the container and turn it into a starfield.
-        var container = document.getElementById('container');
-        var starfield = new Starfield();
+        const container = document.getElementById('starfield');
+        const starfield = new Starfield();
         starfield.initialise(container);
         starfield.start();
     </script>
