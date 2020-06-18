@@ -25,10 +25,20 @@
         overflow: hidden;
     }
     /* Here's where we'll put Space Invader styles... */
+    #gamecontainer {
+        width:  800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 </style>
 <body>
     <!-- The main starfield container, fills the entire screen. -->
     <div id="starfield"></div>
+    <!-- Adding the game -->
+    <div id="gamecontainer">
+        <canvas id="gameCanvas"></canvas>
+    </div>
 
 
     
@@ -36,10 +46,36 @@
     <script src="./js/spaceInvaders.js"></script>
     <script>
         //  Get the container and turn it into a starfield.
-        const container = document.getElementById('starfield');
+        const container = document.getElementById("starfield");
         const starfield = new Starfield();
         starfield.initialise(container);
         starfield.start();
+
+        //  Setup the canvas.
+        const canvas = document.getElementById("gameCanvas");
+        canvas.width = 800;
+        canvas.height = 600;
+
+        //  Create the game.
+        var game = new Game();
+
+        //  Initialise it with the game canvas.
+        game.initialise(canvas);
+
+        //  Start the game.
+        game.start();
+
+        //  Listen for keyboard events.
+        window.addEventListener("keydown", function keydown(e) {
+            const keycode = e.which || window.event.keycode;
+            //  Supress further processing of left/right/space (37/29/32)
+            // We don't let the window process space, left, or right otherwise it tries to move the viewport around which we do not want.
+            if (keycode == 37 || keycode == 39 || keycode == 32) {
+                e.preventDefault();
+            }
+            game.keyDown(keycode);
+        });
+
     </script>
     
 </body>
